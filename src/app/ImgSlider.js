@@ -16,6 +16,9 @@ function ImgSlider() {
   return (
     <Carousel {...settings}>
         <Wrap>
+            <img src="/images/wild_proba.jpg"/>
+        </Wrap>
+        <Wrap>
             <img src="/images/wild-1.jpg"/>
         </Wrap>
         <Wrap>
@@ -23,9 +26,6 @@ function ImgSlider() {
         </Wrap>
         <Wrap>
             <img src="/images/wild-3.jpg"/>
-        </Wrap>
-        <Wrap>
-            <img src="/images/wild-4.jpg"/>
         </Wrap>
     </Carousel>
   )
@@ -62,7 +62,7 @@ const Wrap = styled.div`
         box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
         rgb(0 0 0 / 73%) 0px 16px 10px -10px;
         width: 100%;
-        height: 260px;
+        height: 100%;
 
         &:hover {
             border: 4px solid rgba(249, 249, 249, 0.6);
