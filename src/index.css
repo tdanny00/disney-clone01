@@ -1,5 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 body{
   margin:0;
   color: white;
-  background-color: rgba(1, 1, 28, 1);
+  background-color: #EE9C4B;
 }
