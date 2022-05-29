@@ -4,8 +4,9 @@ import ImgSlider from '../ImgSlider'
 
 function Home() {
   return (
+
     <Container>
-        <ImgSlider/>
+      <ImgSlider />
     </Container>
   )
 }
@@ -13,12 +14,11 @@ function Home() {
 export default Home
 
 const Container = styled.div`
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 20px);
     padding: 0 calc(3.5vw + 5px);
     position: relative;
     overflow-x: hidden;
-
-    &:before {
+    &::before{
         background: url("/images/home-background.png") center center / cover
         no-repeat fixed;
         position: absolute;
@@ -27,5 +27,5 @@ const Container = styled.div`
         left:0;
         right:0;
         bottom:0;
-    }
+      }
 `

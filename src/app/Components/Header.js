@@ -1,37 +1,48 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import CloseIcon from '@material-ui/icons/Close';
+import MenuIcon from '@material-ui/icons/Menu'
 
 function Header() {
-  return (
-      <Nav>
-              <NavLogo>
-                  <img src="/images/deer.png"></img>
-                  <h4>Magyar Vadásztársaság</h4>
-              </NavLogo>
-              <NavText>
-                  <a>
-                      <span>Főoldal</span>
-                  </a>
-                  <a>
-                      <span>Kamara</span>
-                  </a>
-                  <a>
-                      <span>Vadgazdálkodási Alap</span>
-                  </a>
-                  <a>
-                      <span>Vizsgák</span>
-                  </a>
-                  <a>
-                      <span>Hírek</span>
-                  </a>
-                  <a>
-                      <span>Kapcsolat</span>
-                  </a>
-
-              </NavText>
-          </Nav>
-
-  )
+    const [sideMenuStatus, setSideMenuStatus] = useState(false);
+    return (
+        <Nav>
+            <p>
+                <a><img src="/images/logo.png"></img></a>
+            </p>
+            <NavText>
+                <a>
+                    <span>Főoldal</span>
+                </a>
+                <a>
+                    <span>Kamara</span>
+                </a>
+                <a>
+                    <span>Vadgazdálkodás</span>
+                </a>
+                <a>
+                    <span>Vizsgák</span>
+                </a>
+                <a>
+                    <span>Kapcsolat</span>
+                </a>
+            </NavText>
+            <RightMenu>
+                <CostumeMenu onClick={() => setSideMenuStatus(true)}/>
+                <SideMenu show={sideMenuStatus}>
+                    <SideMenuWrapper>
+                        <SideMenuClose onClick={() => setSideMenuStatus(false)} />
+                    </SideMenuWrapper>
+                    <li><a href="">Existing Inventory</a></li>
+                    <li><a href="">Used Inventory</a></li>
+                    <li><a href="">Existing Inventory</a></li>
+                    <li><a href="">Existing Inventory</a></li>
+                    <li><a href="">Existing Inventory</a></li>
+                    <li><a href="">Existing Inventory</a></li>
+                </SideMenu>
+            </RightMenu>
+        </Nav>
+    )
 }
 
 export default Header
@@ -41,23 +52,26 @@ const Nav = styled.div`
     background-color:#EE9C4B;
     padding: 0 36px;
     display:flex;
+    justify-content: space-between;
     align-items: center;
+    img {
+        width: 100px;
 
-`
-const NavLogo = styled.div`
-    width:80px;
-    align-items:center;
-    display: flex;
-
-    img{
-        width: 50px;
     }
+    @media(max-width: 810px) {
+        & {
+        overflow-x:hidden;
+        padding: 0 40px;
+        overflow: hidden;
+        justify-content:space-between;
+        }
 `
+
 const NavText = styled.div`
     display:flex;
     justify-content: center;
+    margin-right: 70px;
     flex: 1;
-    margin:left 25px;
     align-items: center;
     a{
         margin: 20px;
@@ -96,7 +110,59 @@ const NavText = styled.div`
                 transition: 400ms all ease;
             }
         }
-
+     
     }
+    @media(max-width:810px) {
+        & {
+            display: none;
+        }
 `
 
+const SideMenu = styled.div`
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color:white;
+    width: 300px;
+    z-index:100;
+    list-style: none;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    text-align:start;
+    transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
+    transition: 400ms all ease;
+    li{
+        padding: 15px 0;
+        margin-left: 15px;
+        a:hover{
+            background-color: rgba(0,0,0, 0.1);
+            border-radius: 10px;
+        }
+    }
+`
+const SideMenuClose = styled(CloseIcon)`
+    cursor:pointer;
+    color: black;
+`
+const SideMenuWrapper = styled.div`
+    display: flex; 
+    justify-content: flex-end;
+    padding: 10px;
+`
+const RightMenu = styled.div`
+    display: flex;
+    align-items:center;
+    @media(max-width: 810px) {
+        &{         
+            justify-content: space-between;
+        }
+`
+const CostumeMenu = styled(MenuIcon)`
+    cursor: pointer;
+    @media(max-width: 810px) {
+        &{
+            justify-content: space-between;
+        }
+`
