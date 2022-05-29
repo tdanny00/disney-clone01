@@ -3,53 +3,56 @@ import styled from 'styled-components'
 
 function Header() {
   return (
-    <Nav>
-        <NavLogo src="/images/logo.svg"/>
+      <Nav>
+              <NavLogo>
+                  <img src="/images/deer.png"></img>
+                  <h4>Magyar Vadásztársaság</h4>
+              </NavLogo>
+              <NavText>
+                  <a>
+                      <span>Főoldal</span>
+                  </a>
+                  <a>
+                      <span>Kamara</span>
+                  </a>
+                  <a>
+                      <span>Vadgazdálkodási Alap</span>
+                  </a>
+                  <a>
+                      <span>Vizsgák</span>
+                  </a>
+                  <a>
+                      <span>Hírek</span>
+                  </a>
+                  <a>
+                      <span>Kapcsolat</span>
+                  </a>
 
-        <NavText>
-            <a>
-                <img src="/images/home-icon.svg" ></img>
-                <span>Home</span>
-            </a>
-            <a>
-                <img src="/images/search-icon.svg" ></img>
-                <span>Search</span>
-            </a>
-            <a>
-                <img src="/images/watchlist-icon.svg" ></img>
-                <span>Watchlist</span>
-            </a>
-            <a>
-                <img src="/images/original-icon.svg" ></img>
-                <span>Originals</span>
-            </a>
-            <a>
-                <img src="/images/movie-icon.svg" ></img>
-                <span>Movies</span>
-            </a>
-            <a>
-                <img src="/images/series-icon.svg" ></img>
-                <span>Series</span>
-            </a>
+              </NavText>
+          </Nav>
 
-        </NavText>
-
-    </Nav>
   )
 }
 
 export default Header
 
 const Nav = styled.div`
-    height: 70px;
-    background-color:rgba(1, 1, 28, 1);
+    height: 60px;
+    background-color:#EE9C4B;
     padding: 0 36px;
     display:flex;
+    align-items: center;
+
 
 `
-const NavLogo = styled.img`
+const NavLogo = styled.div`
     width:80px;
     align-items:center;
+    display: flex;
+
+    img{
+        width: 50px;
+    }
 `
 const NavText = styled.div`
     display:flex;
@@ -96,5 +99,5 @@ const NavText = styled.div`
         }
 
     }
-
 `
+
