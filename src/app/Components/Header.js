@@ -43,7 +43,6 @@ const Nav = styled.div`
     display:flex;
     align-items: center;
 
-
 `
 const NavLogo = styled.div`
     width:80px;
