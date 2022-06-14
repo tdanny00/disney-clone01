@@ -1,56 +1,79 @@
-.contact-form{
-    padding: 0 3rem 0 3rem;
-    display: flex;
-    height: 80vh;
-    margin-top: 4rem;
-      /* scroll */
-  padding-top: 3rem;
+.contact__container {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+.contact-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 3rem;
+  display: grid;
+}
+.contact__icons {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  transform: scale(1.8);
 }
 
-.c-right{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    flex: 1;
+.contact {
+  display: grid;
+  grid-template-columns: 30% 58%;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
 }
 
-.c-right>form
-{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    
+.contact-title1 {
+  font-weight: 400;
+  font-size: 3rem;
+}
+.contact-about-primary {
+  color: #61c2ff;
+  font-weight: bold;
 }
 
-.c-right .user{
-    width: 20rem;
-    height: 2rem;
-    padding: 0.3em;
-    outline: none;
-    border: 2px solid var(--orange);
-    border-radius: 8px;
-    font-size: 16px;   
+.contact__details {
+  display: grid;
+  row-gap: 2rem;
+  padding: 1rem;
+}
+.contact__email {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #61c2ff;
+  border-radius: 0.4rem;
 }
 
-textarea{
-    height: 4rem!important;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.c-blur1{
-    top: 1rem;
-    left: 8rem;
+input,
+textarea {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: transparent;
+  border: 2px solid #61c2ff;
+  resize: none;
 }
 
-@media screen and (max-width: 480px) {
-    .contact-form{
-        padding: 0;
-        flex-direction: column;
-        gap: 5rem;
-        height: 40rem;
-    }
-    .c-right .user{
-        width: 16rem;
-    }
+@media screen and (max-width: 900px) {
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    gap: 7rem;
+  }
+}
 
-}   
+@media screen and (max-width: 420px) {
+}

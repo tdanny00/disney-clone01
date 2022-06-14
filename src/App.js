@@ -1,33 +1,20 @@
-import Navbar from "./components/Navbar/Navbar";
-import Intro from "./components/Intro/Intro";
-import Services from "./components/Services/Services";
+import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
-import Experience from "./components/Experience/Experience";
-import Works from "./components/Works/Works";
-import Portfolio from "./components/Portfolio/Portfolio";
-import Testimonial from "./components/Testimonials/Testimonial";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
-import { useContext } from "react";
-import { themeContext } from "./Context";
+import Services from "./Components/Services/Services";
+import Intro from "./Components/Intro/Intro";
+import Skills from "./Components/Skills/Skills";
+import Footer from "./Components/Footer/Footer";
+import Contact from "./Components/Contact/Contact";
+import Scroll from "./Components/Scroll/Scroll";
+
 function App() {
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
   return (
-    <div
-      className="App"
-      style={{
-        background: darkMode ? "black" : "",
-        color: darkMode ? "white" : "",
-      }}
-    >
+    <div className="App">
+      <Scroll />
       <Navbar />
       <Intro />
       <Services />
-      <Experience />
-      <Works />
-      <Portfolio />
-      <Testimonial />
+      <Skills />
       <Contact />
       <Footer />
     </div>
